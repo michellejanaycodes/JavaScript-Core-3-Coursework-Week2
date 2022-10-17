@@ -1,0 +1,10 @@
+body {
+  display: grid;
+  grid-template: auto / repeat(2, 1fr);
+}
+main {
+  grid-column: 1;
+}
+aside {
+  grid-column: 2;
+}
