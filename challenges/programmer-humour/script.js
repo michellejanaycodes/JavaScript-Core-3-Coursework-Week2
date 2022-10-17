@@ -4,7 +4,10 @@ let img = document.createElement("img");
 
 fetch(comic)
   .then((response) => {
-    return response.json();
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error("Something went wrong");
   })
   .then((comicData) => {
     console.log(comicData);
@@ -14,5 +17,5 @@ fetch(comic)
     main.append(img);
   })
   .catch((error) => {
-    main.innerHTML = `Oops! ${error}`;
+    console.log(error);
   });

@@ -9,7 +9,10 @@ const dogs = "https://dog.ceo/api/breeds/image/random";
 btn1.addEventListener("click", () => {
   fetch(dogs)
     .then((response) => {
-      return response.json();
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error("Something went wrong");
     })
     .then((picture) => {
       img.src = picture.message;
@@ -18,7 +21,7 @@ btn1.addEventListener("click", () => {
       dogImg.append(img);
     })
     .catch((error) => {
-      dogImg.innerHTML = `Oops! ${error}`;
+      console.log(error);
     });
 });
 
