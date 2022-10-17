@@ -3,7 +3,6 @@ const btn1 = document.getElementById("btn-1");
 const btn2 = document.getElementById("btn-2");
 let dogImg = document.getElementById("dogs-img");
 let img = document.createElement("img");
-let li = document.createElement("li");
 let str = "";
 const dogs = "https://dog.ceo/api/breeds/image/random";
 
